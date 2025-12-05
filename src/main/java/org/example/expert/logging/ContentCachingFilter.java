@@ -14,7 +14,6 @@ import org.springframework.web.util.ContentCachingResponseWrapper;
 import java.io.IOException;
 
 @Component
-@WebFilter(urlPatterns = "/*", description = "Wrapping Request")
 public class ContentCachingFilter extends OncePerRequestFilter {
 
     @Override
@@ -27,6 +26,5 @@ public class ContentCachingFilter extends OncePerRequestFilter {
         } finally {
             responseWrapper.copyBodyToResponse();
         }
-
     }
 }
